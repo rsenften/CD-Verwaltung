@@ -29,8 +29,26 @@
         <Label x:Name="eintragErstelltAm1" Content="01.02.2019" FontSize="15" HorizontalAlignment="Right" Margin="0,140,10,0" Grid.Column="2"></Label>
         <Label x:Name="eintragErstelltAm2" Content="22.05.2018" FontSize="15" HorizontalAlignment="Right" Margin="0,170,10,0" Grid.Column="2"></Label>
         <Label x:Name="eintragErstelltAm3" Content="15.10.2016" FontSize="15" HorizontalAlignment="Right" Margin="0,200,10,0" Grid.Column="2"></Label>
-        <Button x:Name="löschen" Content="Löschen" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,10" Grid.Column="0"></Button>
-        <Button x:Name="bearbeiten" Content="Bearbeiten" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10" Grid.Column="1"></Button>
-        <Button x:Name="erstellen" FontSize="15" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,10" Grid.Column="2"></Button>
+
+        <Button x:Name="löschen" FontSize="15" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,10" Grid.Column="0">
+            <DockPanel LastChildFill="True">
+                <Image DockPanel.Dock="Left" Source="Images/Delete.png" Height="27" Width="36" ></Image>
+                <TextBlock HorizontalAlignment="Right">Löschen</TextBlock>
+            </DockPanel>
+        </Button>
+
+        <Button x:Name="bearbeiten" FontSize="15" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10" Grid.Column="1">
+            <DockPanel LastChildFill="True">
+                <Image DockPanel.Dock="Left" Source="Images/Edit.png" Height="27" Width="36" ></Image>
+                <TextBlock HorizontalAlignment="Right">Bearbeiten</TextBlock>
+            </DockPanel>
+        </Button>
+
+        <Button x:Name="erstellen" FontSize="15" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,10" Grid.Column="2">
+            <DockPanel LastChildFill="True">
+                <Image DockPanel.Dock="Left" Source="Images/Create.png" Height="27" Width="36" ></Image>
+                <TextBlock HorizontalAlignment="Right">Erstellen</TextBlock>
+            </DockPanel>
+        </Button>
     </Grid>
 </Window>
