@@ -3,7 +3,7 @@
   <Class Name="M120Projekt.Data.CD">
     <Position X="1.25" Y="0.5" Width="4" />
     <TypeIdentifier>
-      <HashCode>AABAAAAIAEAAAAAkCAgAAoAAAAAABEQAAAAAAACCBUA=</HashCode>
+      <HashCode>AAEAAAAIAMAAAAAkCAgAAoAAAAAABEQAAAAAAACABEA=</HashCode>
       <FileName>Data\CD.cs</FileName>
     </TypeIdentifier>
   </Class>

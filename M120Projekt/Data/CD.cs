@@ -17,13 +17,11 @@ namespace M120Projekt.Data
         [Required]
         public String CDName { get; set; }
         [Required]
-        public String Lied { get; set; }
+        public String ArtDesInhalts { get; set; }
         [Required]
-        public String Film { get; set; }
+        public String StueckFilm { get; set; }
         [Required]
-        public String Kuenstler { get; set; }
-        [Required]
-        public String Produzent { get; set; }
+        public String KuenstlerProduzent { get; set; }
         [Required]
         public TimeSpan Dauer { get; set; }
         [Required]

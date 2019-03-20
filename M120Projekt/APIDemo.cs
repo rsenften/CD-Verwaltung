@@ -17,11 +17,9 @@ namespace M120Projekt
             // KlasseA
             Data.CD klasseA1 = new Data.CD();
             klasseA1.CDName = "Artikel 1";
-            klasseA1.Erstellung = DateTime.Today;
-            klasseA1.Lied = "Lied 1";
-            klasseA1.Film = "Film 1";
-            klasseA1.Kuenstler = "Künstler 1";
-            klasseA1.Produzent = "Produzent";
+            klasseA1.ArtDesInhalts = "Lied";
+            klasseA1.StueckFilm = "Lied 1";
+            klasseA1.KuenstlerProduzent = "Künstler 1";
             klasseA1.Dauer = new TimeSpan(0, 3, 25);
             klasseA1.Erstellung = DateTime.Today;
             klasseA1.Veroeffentlichung = DateTime.Today.AddMonths(-1);
@@ -31,7 +29,7 @@ namespace M120Projekt
         }
         public static void DemoACreateKurz()
         {
-            Data.CD klasseA2 = new Data.CD { CDName = "Artikel 2", IstIntakt = true, Erstellung = DateTime.Today, Lied = "Lied 2", Film = "Film 2", Kuenstler = "Künstler 2", Produzent = "Produzent 2", Dauer = new TimeSpan(0, 4, 15), Veroeffentlichung = DateTime.Today.AddYears(-1).AddMonths(-5) };
+            Data.CD klasseA2 = new Data.CD { CDName = "Artikel 2", IstIntakt = true, Erstellung = DateTime.Today, ArtDesInhalts = "Lied", StueckFilm = "Lied 2", KuenstlerProduzent = "Künstler 2", Dauer = new TimeSpan(0, 4, 15), Veroeffentlichung = DateTime.Today.AddYears(-1).AddMonths(-5) };
             Int64 klasseA2Id = klasseA2.Erstellen();
             Debug.Print("Artikel erstellt mit Id:" + klasseA2Id);
         }
