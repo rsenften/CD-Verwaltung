@@ -19,7 +19,7 @@ namespace M120Projekt
     /// <summary>
     /// Interaktionslogik für MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : UserControl
     {
         public MainWindow()
         {
@@ -27,12 +27,24 @@ namespace M120Projekt
             // Wichtig!
             Data.Global.context = new Data.Context();
             // Aufruf diverse APIDemo Methoden
-            APIDemo.DemoACreate();
-            APIDemo.DemoACreateKurz();
-            APIDemo.DemoARead();
-            APIDemo.DemoAUpdate();
-            APIDemo.DemoARead();
-            APIDemo.DemoADelete();
+            //APIDemo.DemoACreate();
+            //APIDemo.DemoACreateKurz();
+            //APIDemo.DemoARead();
+            //APIDemo.DemoAUpdate();
+            //APIDemo.DemoARead();
+            //APIDemo.DemoADelete();
+        }
+
+        private void btnErstellen_Click(object sender, RoutedEventArgs e)
+        {
+            CreateWindow objCreateWindow = new CreateWindow();
+            objCreateWindow.ShowDialog();
+        }
+
+        private void btnBearbeiten_Click(object sender, RoutedEventArgs e)
+        {
+            EditWindow objEditWindow = new EditWindow();
+            objEditWindow.ShowDialog();
         }
     }
 }

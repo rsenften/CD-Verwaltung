@@ -23,5 +23,10 @@ namespace M120Projekt
         {
             InitializeComponent();
         }
+
+        private void btnAbbrechen_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
