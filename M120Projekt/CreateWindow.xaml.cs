@@ -30,25 +30,28 @@ namespace M120Projekt
             this.Close();
         }
 
-        /*
         private void txtMin_Input(object sender, TextCompositionEventArgs e)
         {
-            if (Regex.IsMatch(e.Text, @"^[1 - 5] ?\d$"))
-            {
-                Console.WriteLine("Deine Eingabe ist korrekt.");
-            } else
-            {
-                Console.WriteLine("Deine Eingabe ist Invalid.");
-            }
-        }*/
-        private void txtMin_Input(object sender, TextCompositionEventArgs e)
-        {
-            Regex regex = new Regex(@"[0-9]*");
+            Regex regex = new Regex(@"^[0-5]?[\d]{1}$"); // mit Lukas anschauen
             e.Handled = regex.IsMatch(e.Text);
             if (regex.IsMatch(txtBoxDauerMin.Text))
             {
                 Console.WriteLine("Korrekt");
             } else
+            {
+                Console.WriteLine("Invalid");
+            }
+        }
+
+        private void txtCDName_Input(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex(@"^([\w]{3,})$");
+            e.Handled = regex.IsMatch(e.Text);
+            if (regex.IsMatch(txtBoxCDName.Text))
+            {
+                Console.WriteLine("Korrekt");
+            }
+            else
             {
                 Console.WriteLine("Invalid");
             }

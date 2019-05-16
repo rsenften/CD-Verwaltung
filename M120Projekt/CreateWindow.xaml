@@ -26,7 +26,7 @@
         <Label x:Name="erstellungsdatum" Content="Erstellungsdatum:" FontSize="15" HorizontalAlignment="Left" Margin="20,310,0,40" Grid.Column="0"></Label>
         <Label x:Name="veröffentlichungsdatum" Content="Veröffentlichungsdatum*:" FontSize="15" HorizontalAlignment="Left" Margin="20,355,0,40" Grid.Column="0"></Label>
         <Label x:Name="zustand" Content="Zustand*:" FontSize="15" HorizontalAlignment="Left" Margin="20,400,0,40" Grid.Column="0"></Label>
-        <TextBox x:Name="txtBoxCDName" BorderThickness="1" FontSize="15" VerticalAlignment="Top" Margin="0,15,40,0" Grid.Column="1"></TextBox>
+        <TextBox x:Name="txtBoxCDName" PreviewTextInput="txtCDName_Input" BorderThickness="1" FontSize="15" VerticalAlignment="Top" Margin="0,15,40,0" Grid.Column="1"></TextBox>
         <ComboBox Grid.Column="1" Width="180" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,135,0,0">
             <ComboBoxItem x:Name="lied" IsSelected="True" Content="Lied"></ComboBoxItem>
             <ComboBoxItem x:Name="film" Content="Film"></ComboBoxItem>
