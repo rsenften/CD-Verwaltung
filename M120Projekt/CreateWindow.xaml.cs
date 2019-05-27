@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data.Sql;
 
 namespace M120Projekt
 {
@@ -20,9 +21,12 @@ namespace M120Projekt
     /// </summary>
     public partial class CreateWindow : Window
     {
+
         public CreateWindow()
         {
             InitializeComponent();
+            this.usName.SetRegexString(@"^([\w]{3,})$");
+            this.usName.SetErrorMessage("Der Name muss mind. 3 Zeichen enthalten.");
         }
 
         private void btnAbbrechen_Click(object sender, RoutedEventArgs e)
@@ -32,7 +36,7 @@ namespace M120Projekt
 
         private void txtMin_Input(object sender, TextCompositionEventArgs e)
         {
-            Regex regex = new Regex(@"^[0-5]?[\d]{1}$"); // mit Lukas anschauen
+            Regex regex = new Regex(@"\D"); // mit Lukas anschauen Regex: ^[0-5]?[\d]{1}$
             e.Handled = regex.IsMatch(e.Text);
             if (regex.IsMatch(txtBoxDauerMin.Text))
             {
@@ -45,17 +49,23 @@ namespace M120Projekt
 
         private void txtCDName_Input(object sender, TextCompositionEventArgs e)
         {
-            Regex regex = new Regex(@"^([\w]{3,})$");
-            e.Handled = regex.IsMatch(e.Text);
-            if (regex.IsMatch(txtBoxCDName.Text))
-            {
-                Console.WriteLine("Korrekt");
-            }
-            else
-            {
-                Console.WriteLine("Invalid");
-            }
         }
 
+        private void Btn_CreateSpeichern_Click(object sender, RoutedEventArgs e)
+        {
+            // Save Data on Database
+            Data.CD klasseD1 = new Data.CD();
+
+            klasseD1.CDName = "CD Name2"; // usName.TextInput? --> mit Mateusz anschauen
+            klasseD1.ArtDesInhalts = "Lied"; // Dropdown, wie?
+            klasseD1.StueckFilm = txtBoxstueckFilm.Text;
+            klasseD1.KuenstlerProduzent = txtBoxKuenstlerProduzent.Text;
+            klasseD1.Dauer = new TimeSpan(0, 5, 14);
+            klasseD1.Erstellung = erstellung.DisplayDate;
+            klasseD1.Veroeffentlichung = DateTime.Today;
+            klasseD1.IstIntakt = true;
+
+            Int64 klasseD1Id = klasseD1.Erstellen();
+        }
     }
 }

@@ -79,6 +79,23 @@ namespace M120Projekt.Data
         {
             return CDId.ToString(); // Für bessere Coded UI Test Erkennung
         }
+
+        public void btn_CreateSpeichern()
+        {
+            /*// Save Data on Database
+            Data.CD klasseD1 = new Data.CD();
+
+            klasseD1.CDName = "CD Name";
+            klasseD1.ArtDesInhalts = "Film";
+            klasseD1.StueckFilm = "Ghostbusters";
+            klasseD1.KuenstlerProduzent = "dont know";
+            klasseD1.Dauer = new TimeSpan(1, 35, 14);
+            klasseD1.Erstellung = DateTime.Today;
+            klasseD1.Veroeffentlichung = DateTime.Today;
+            klasseD1.IstIntakt = true;
+
+            Int64 klasseD1ID = klasseD1.Erstellen();*/
+        }
         #endregion
     }
 }
