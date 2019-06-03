@@ -34,6 +34,20 @@ namespace M120Projekt
             this.Close();
         }
 
+        private void txtHrs_Input(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex(@"\D");
+            e.Handled = regex.IsMatch(e.Text);
+            if (regex.IsMatch(txtBoxDauerStunden.Text))
+            {
+                Console.WriteLine("Korrekt");
+            }
+            else
+            {
+                Console.WriteLine("Invalid");
+            }
+        }
+
         private void txtMin_Input(object sender, TextCompositionEventArgs e)
         {
             Regex regex = new Regex(@"\D"); // mit Lukas anschauen Regex: ^[0-5]?[\d]{1}$
@@ -42,6 +56,20 @@ namespace M120Projekt
             {
                 Console.WriteLine("Korrekt");
             } else
+            {
+                Console.WriteLine("Invalid");
+            }
+        }
+
+        private void txtSec_Input(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex(@"\D");
+            e.Handled = regex.IsMatch(e.Text);
+            if (regex.IsMatch(txtBoxDauerSec.Text))
+            {
+                Console.WriteLine("Korrekt");
+            }
+            else
             {
                 Console.WriteLine("Invalid");
             }
@@ -56,15 +84,16 @@ namespace M120Projekt
             // Save Data on Database
             Data.CD klasseD1 = new Data.CD();
 
-            klasseD1.CDName = "CD Name2"; // usName.TextInput? --> mit Mateusz anschauen
-            klasseD1.ArtDesInhalts = "Lied"; // Dropdown, wie?
+            klasseD1.CDName = "Neuste CD"; // usName.TextInput ? --> mit Mateusz anschauen
+            klasseD1.ArtDesInhalts = DDArtDInhalt.Text;
             klasseD1.StueckFilm = txtBoxstueckFilm.Text;
             klasseD1.KuenstlerProduzent = txtBoxKuenstlerProduzent.Text;
-            klasseD1.Dauer = new TimeSpan(0, 5, 14);
+            //klasseD1.Dauer = new TimeSpan(txtBoxDauerStunden.Text, 34, 28);
+            klasseD1.Dauer = txtBoxDauerStunden.Text; txtBoxDauerMin.Text;
             klasseD1.Erstellung = erstellung.DisplayDate;
-            klasseD1.Veroeffentlichung = DateTime.Today;
-            klasseD1.IstIntakt = true;
-
+            klasseD1.Veroeffentlichung = veröffentlichung.DisplayDate;
+            klasseD1.IstIntakt = DDZustand.Text;
+            
             Int64 klasseD1Id = klasseD1.Erstellen();
         }
     }

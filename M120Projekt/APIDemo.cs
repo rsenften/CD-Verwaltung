@@ -23,13 +23,13 @@ namespace M120Projekt
             klasseA1.Dauer = new TimeSpan(0, 3, 25);
             klasseA1.Erstellung = DateTime.Today;
             klasseA1.Veroeffentlichung = DateTime.Today.AddMonths(-1);
-            klasseA1.IstIntakt = true;
+            klasseA1.IstIntakt = "Intakt";
             Int64 klasseA1Id = klasseA1.Erstellen();
             Debug.Print("Artikel erstellt mit Id:" + klasseA1Id);
         }
         public static void DemoACreateKurz()
         {
-            Data.CD klasseA2 = new Data.CD { CDName = "Artikel 2", IstIntakt = true, Erstellung = DateTime.Today, ArtDesInhalts = "Lied", StueckFilm = "Lied 2", KuenstlerProduzent = "Künstler 2", Dauer = new TimeSpan(0, 4, 15), Veroeffentlichung = DateTime.Today.AddYears(-1).AddMonths(-5) };
+            Data.CD klasseA2 = new Data.CD { CDName = "Artikel 2", IstIntakt = "Intakt", Erstellung = DateTime.Today, ArtDesInhalts = "Lied", StueckFilm = "Lied 2", KuenstlerProduzent = "Künstler 2", Dauer = new TimeSpan(0, 4, 15), Veroeffentlichung = DateTime.Today.AddYears(-1).AddMonths(-5) };
             Int64 klasseA2Id = klasseA2.Erstellen();
             Debug.Print("Artikel erstellt mit Id:" + klasseA2Id);
         }

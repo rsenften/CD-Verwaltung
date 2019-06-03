@@ -23,12 +23,12 @@ namespace M120Projekt.Data
         [Required]
         public String KuenstlerProduzent { get; set; }
         [Required]
-        public TimeSpan Dauer { get; set; }
+        public String Dauer { get; set; }
         [Required]
         public DateTime Erstellung { get; set; }
         [Required]
         public DateTime Veroeffentlichung { get; set; }
-        public Boolean IstIntakt { get; set; }
+        public String IstIntakt { get; set; }
         #endregion
         #region Applikationsschicht
         public CD() { }

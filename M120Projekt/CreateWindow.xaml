@@ -26,22 +26,22 @@
         <Label x:Name="erstellungsdatum" Content="Erstellungsdatum:" FontSize="15" HorizontalAlignment="Left" Margin="20,310,0,40" Grid.Column="0"></Label>
         <Label x:Name="veröffentlichungsdatum" Content="Veröffentlichungsdatum*:" FontSize="15" HorizontalAlignment="Left" Margin="20,355,0,40" Grid.Column="0"></Label>
         <Label x:Name="zustand" Content="Zustand*:" FontSize="15" HorizontalAlignment="Left" Margin="20,400,0,40" Grid.Column="0"></Label>
-        <ComboBox Grid.Column="1" Width="180" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,135,0,0">
+        <ComboBox x:Name="DDArtDInhalt" Grid.Column="1" Width="180" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,135,0,0">
             <ComboBoxItem x:Name="lied" IsSelected="True" Content="Lied"></ComboBoxItem>
             <ComboBoxItem x:Name="film" Content="Film"></ComboBoxItem>
         </ComboBox>
         <TextBox x:Name="txtBoxstueckFilm" BorderThickness="1" FontSize="15" VerticalAlignment="Top" Margin="0,180,40,0" Grid.Column="1"></TextBox>
         <TextBox x:Name="txtBoxKuenstlerProduzent" BorderThickness="1" FontSize="15" VerticalAlignment="Top" Margin="0,225,40,0" Grid.Column="1"></TextBox>
 
-        <TextBox x:Name="txtBoxDauerStunden" BorderThickness="1" FontSize="15" VerticalAlignment="Top" Margin="0,270,195,0" Grid.Column="1"></TextBox>
+        <TextBox x:Name="txtBoxDauerStunden" PreviewTextInput="txtHrs_Input" BorderThickness="1" FontSize="15" VerticalAlignment="Top" Margin="0,270,195,0" Grid.Column="1"></TextBox>
         <TextBox x:Name="txtBoxDauerMin" PreviewTextInput="txtMin_Input" BorderThickness="1" FontSize="15" VerticalAlignment="Top" Margin="60,270,135,0" Grid.Column="1"/>
-        <TextBox x:Name="txtBoxDauerSec" BorderThickness="1" FontSize="15" VerticalAlignment="Top" Margin="137,270,58,0" Grid.Column="1"></TextBox>
+        <TextBox x:Name="txtBoxDauerSec" PreviewTextInput="txtSec_Input" BorderThickness="1" FontSize="15" VerticalAlignment="Top" Margin="137,270,58,0" Grid.Column="1"></TextBox>
         <Label x:Name="dauerStunden" Content="h" FontSize="15" HorizontalAlignment="Left" Margin="30,268,0,0" Grid.Column="1"></Label>
         <Label x:Name="dauerMin" Content="min" FontSize="15" HorizontalAlignment="Left" Margin="90,268,0,40" Grid.Column="1"></Label>
         <Label x:Name="dauerSec" Content="s" FontSize="15" HorizontalAlignment="Right" Margin="0,268,40,40" Grid.Column="1"></Label>
         <DatePicker x:Name="erstellung" VerticalAlignment="Center" HorizontalAlignment="Left" Width="180" Margin="0,85,0,0" Grid.Column="1"></DatePicker>
         <DatePicker x:Name="veröffentlichung" VerticalAlignment="Center" HorizontalAlignment="Left" Width="180" Margin="0,175,0,0" Grid.Column="1"></DatePicker>
-        <ComboBox Grid.Column="1" Width="180" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,260,0,0">
+        <ComboBox x:Name="DDZustand" Grid.Column="1" Width="180" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,260,0,0">
             <ComboBoxItem x:Name="intakt" IsSelected="True" Content="Intakt"></ComboBoxItem>
             <ComboBoxItem x:Name="defekt" Content="Defekt"></ComboBoxItem>
         </ComboBox>
