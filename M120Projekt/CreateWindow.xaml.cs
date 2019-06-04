@@ -88,8 +88,7 @@ namespace M120Projekt
             klasseD1.ArtDesInhalts = DDArtDInhalt.Text;
             klasseD1.StueckFilm = txtBoxstueckFilm.Text;
             klasseD1.KuenstlerProduzent = txtBoxKuenstlerProduzent.Text;
-            //klasseD1.Dauer = new TimeSpan(txtBoxDauerStunden.Text, 34, 28);
-            klasseD1.Dauer = txtBoxDauerStunden.Text; txtBoxDauerMin.Text;
+            klasseD1.Dauer = new TimeSpan(0, 34, 28);
             klasseD1.Erstellung = erstellung.DisplayDate;
             klasseD1.Veroeffentlichung = veröffentlichung.DisplayDate;
             klasseD1.IstIntakt = DDZustand.Text;

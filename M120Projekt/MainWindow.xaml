@@ -56,5 +56,10 @@
                 <TextBlock HorizontalAlignment="Right">Erstellen</TextBlock>
             </DockPanel>
         </Button>
+        <DataGrid x:Name="mainWindowDataGrid" ItemsSource="{Binding}" HorizontalAlignment="Left" Height="115" Margin="10,254,0,0" VerticalAlignment="Top" Width="530" Grid.ColumnSpan="3">
+            <DataGrid.Columns>
+                <DataGridTextColumn IsReadOnly="True" Binding="{Binding CDName}" Header="Name:" ></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </UserControl>

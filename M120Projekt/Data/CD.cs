@@ -23,7 +23,7 @@ namespace M120Projekt.Data
         [Required]
         public String KuenstlerProduzent { get; set; }
         [Required]
-        public String Dauer { get; set; }
+        public TimeSpan Dauer { get; set; }
         [Required]
         public DateTime Erstellung { get; set; }
         [Required]
