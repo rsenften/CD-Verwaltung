@@ -23,7 +23,7 @@
         </ComboBox>
         <Label x:Name="filternNach" Content="Filtern nach:" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-100,50,0,0" Grid.Column="2"></Label>
         <TextBox x:Name="txtFilter" BorderThickness="1" FontSize="15" Width="130" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,55,10,0" Grid.Column="2"></TextBox>
-        <Label x:Name="name" Content="Name:" FontWeight="Bold" FontSize="15" HorizontalAlignment="Left" Margin="10,110,0,0" Grid.Column="0"></Label>
+        <!--Label x:Name="name" Content="Name:" FontWeight="Bold" FontSize="15" HorizontalAlignment="Left" Margin="10,110,0,0" Grid.Column="0"></>
         <Label x:Name="artDesInhalts" Content="Art des Inhalts:" FontWeight="Bold" FontSize="15" HorizontalAlignment="Center" Margin="0,110,0,0" Grid.Column="1"></Label>
         <Label x:Name="erstelltAm" Content="Erstellt am:" FontWeight="Bold" FontSize="15" HorizontalAlignment="Right" Margin="10,110,10,0" Grid.Column="2"></Label>
         <Label x:Name="eintragName1" Content="CD__Name1" FontSize="15" HorizontalAlignment="Left" Margin="10,140,0,0" Grid.Column="0"></Label>
@@ -34,7 +34,7 @@
         <Label x:Name="eintragArtDesInhalts3" Content="Lied" FontSize="15" HorizontalAlignment="Center" Margin="0,200,0,0" Grid.Column="1"></Label>
         <Label x:Name="eintragErstelltAm1" Content="01.02.2019" FontSize="15" HorizontalAlignment="Right" Margin="0,140,10,0" Grid.Column="2"></Label>
         <Label x:Name="eintragErstelltAm2" Content="22.05.2018" FontSize="15" HorizontalAlignment="Right" Margin="0,170,10,0" Grid.Column="2"></Label>
-        <Label x:Name="eintragErstelltAm3" Content="15.10.2016" FontSize="15" HorizontalAlignment="Right" Margin="0,200,10,0" Grid.Column="2"></Label>
+        <Label x:Name="eintragErstelltAm3" Content="15.10.2016" FontSize="15" HorizontalAlignment="Right" Margin="0,200,10,0" Grid.Column="2"></Label-->
 
         <Button x:Name="löschen" FontSize="15" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,10" Grid.Column="0">
             <DockPanel LastChildFill="True">
@@ -56,10 +56,24 @@
                 <TextBlock HorizontalAlignment="Right">Erstellen</TextBlock>
             </DockPanel>
         </Button>
-        <DataGrid x:Name="mainWindowDataGrid" ItemsSource="{Binding}" HorizontalAlignment="Left" Height="115" Margin="10,254,0,0" VerticalAlignment="Top" Width="530" Grid.ColumnSpan="3">
+        <DataGrid x:Name="mainWindowDataGrid" ItemsSource="{Binding CD}" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="115" Margin="10,175,0,0" VerticalAlignment="Top" Width="530" Grid.ColumnSpan="3">
             <DataGrid.Columns>
-                <DataGridTextColumn IsReadOnly="True" Binding="{Binding CDName}" Header="Name:" ></DataGridTextColumn>
+                <DataGridTextColumn IsReadOnly="True" Binding="{Binding CDName}" Header="Name:" Width="220"></DataGridTextColumn>
+                <DataGridTextColumn IsReadOnly="True" Binding="{Binding ArtDesInhalts}" Header="Art des Inhalts:" Width="230"></DataGridTextColumn>
+                <DataGridTextColumn IsReadOnly="True" Binding="{Binding Erstellung}" Header="Erstellt am:" Width="80"></DataGridTextColumn>
             </DataGrid.Columns>
+            <DataGrid.RowDetailsTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="{Binding CDName}" FontSize="12" VerticalAlignment="Center"></TextBlock>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="{Binding ArtDesInhalts}" FontSize="12" VerticalAlignment="Center"></TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </DataGrid.RowDetailsTemplate>
         </DataGrid>
     </Grid>
 </UserControl>

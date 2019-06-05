@@ -35,6 +35,12 @@ namespace M120Projekt
             //APIDemo.DemoADelete();
         }
 
+        /*
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            
+        }*/
+
         private void btnErstellen_Click(object sender, RoutedEventArgs e)
         {
             CreateWindow objCreateWindow = new CreateWindow();

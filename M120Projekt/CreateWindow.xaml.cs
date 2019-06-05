@@ -26,7 +26,7 @@ namespace M120Projekt
         {
             InitializeComponent();
             this.usName.SetRegexString(@"^([\w]{3,})$");
-            this.usName.SetErrorMessage("Der Name muss mind. 3 Zeichen enthalten.");
+            this.usName.SetErrorMessage("Min. 3 Zeichen, keine Leerzeichen");
         }
 
         private void btnAbbrechen_Click(object sender, RoutedEventArgs e)
