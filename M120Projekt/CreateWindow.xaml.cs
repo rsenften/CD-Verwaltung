@@ -50,7 +50,7 @@ namespace M120Projekt
 
         private void txtMin_Input(object sender, TextCompositionEventArgs e)
         {
-            Regex regex = new Regex(@"\D"); // mit Lukas anschauen Regex: ^[0-5]?[\d]{1}$
+            Regex regex = new Regex(@"\D");
             e.Handled = regex.IsMatch(e.Text);
             if (regex.IsMatch(txtBoxDauerMin.Text))
             {
@@ -84,13 +84,13 @@ namespace M120Projekt
             // Save Data on Database
             Data.CD klasseD1 = new Data.CD();
 
-            klasseD1.CDName = "Neuste CD"; // usName.TextInput ? --> mit Mateusz anschauen
+            klasseD1.CDName = this.usName.textBox.Text;
             klasseD1.ArtDesInhalts = DDArtDInhalt.Text;
             klasseD1.StueckFilm = txtBoxstueckFilm.Text;
             klasseD1.KuenstlerProduzent = txtBoxKuenstlerProduzent.Text;
-            klasseD1.Dauer = new TimeSpan(0, 34, 28);
-            klasseD1.Erstellung = erstellung.DisplayDate;
-            klasseD1.Veroeffentlichung = veröffentlichung.DisplayDate;
+            klasseD1.Dauer = new TimeSpan(short.Parse(txtBoxDauerStunden.Text), short.Parse(txtBoxDauerMin.Text), short.Parse(txtBoxDauerSec.Text));
+            klasseD1.Erstellung = erstellung.SelectedDate.Value;
+            klasseD1.Veroeffentlichung = veröffentlichung.SelectedDate;
             klasseD1.IstIntakt = DDZustand.Text;
             
             Int64 klasseD1Id = klasseD1.Erstellen();

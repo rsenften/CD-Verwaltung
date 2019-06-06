@@ -56,24 +56,12 @@
                 <TextBlock HorizontalAlignment="Right">Erstellen</TextBlock>
             </DockPanel>
         </Button>
-        <DataGrid x:Name="mainWindowDataGrid" ItemsSource="{Binding CD}" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="115" Margin="10,175,0,0" VerticalAlignment="Top" Width="530" Grid.ColumnSpan="3">
+        <DataGrid x:Name="mainWindowDataGrid" ItemsSource="{Binding CD}" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="202" Margin="10,175,0,0" VerticalAlignment="Top" Width="530" Grid.ColumnSpan="3">
             <DataGrid.Columns>
-                <DataGridTextColumn IsReadOnly="True" Binding="{Binding CDName}" Header="Name:" Width="220"></DataGridTextColumn>
-                <DataGridTextColumn IsReadOnly="True" Binding="{Binding ArtDesInhalts}" Header="Art des Inhalts:" Width="230"></DataGridTextColumn>
-                <DataGridTextColumn IsReadOnly="True" Binding="{Binding Erstellung}" Header="Erstellt am:" Width="80"></DataGridTextColumn>
+                <DataGridTextColumn IsReadOnly="True" Binding="{Binding CDName}" Header="Name:" Width="180"></DataGridTextColumn>
+                <DataGridTextColumn IsReadOnly="True" Binding="{Binding ArtDesInhalts}" Header="Art des Inhalts:" Width="180"></DataGridTextColumn>
+                <DataGridTextColumn IsReadOnly="True" Binding="{Binding Erstellung}" Header="Erstellt am:" Width="170"></DataGridTextColumn>
             </DataGrid.Columns>
-            <DataGrid.RowDetailsTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <StackPanel Orientation="Vertical">
-                            <TextBlock Text="{Binding CDName}" FontSize="12" VerticalAlignment="Center"></TextBlock>
-                        </StackPanel>
-                        <StackPanel Orientation="Vertical">
-                            <TextBlock Text="{Binding ArtDesInhalts}" FontSize="12" VerticalAlignment="Center"></TextBlock>
-                        </StackPanel>
-                    </StackPanel>
-                </DataTemplate>
-            </DataGrid.RowDetailsTemplate>
         </DataGrid>
     </Grid>
 </UserControl>

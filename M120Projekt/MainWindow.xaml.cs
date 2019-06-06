@@ -26,6 +26,7 @@ namespace M120Projekt
             InitializeComponent();
             // Wichtig!
             Data.Global.context = new Data.Context();
+            mainWindowDataGrid.ItemsSource = Data.CD.LesenAlle().Select(c => new { c.CDName, c.ArtDesInhalts, c.Erstellung });
             // Aufruf diverse APIDemo Methoden
             //APIDemo.DemoACreate();
             //APIDemo.DemoACreateKurz();

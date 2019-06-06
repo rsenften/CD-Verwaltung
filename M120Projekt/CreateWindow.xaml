@@ -40,7 +40,7 @@
         <Label x:Name="dauerMin" Content="min" FontSize="15" HorizontalAlignment="Left" Margin="90,268,0,40" Grid.Column="1"></Label>
         <Label x:Name="dauerSec" Content="s" FontSize="15" HorizontalAlignment="Right" Margin="0,268,40,40" Grid.Column="1"></Label>
         <DatePicker x:Name="erstellung" VerticalAlignment="Center" HorizontalAlignment="Left" Width="180" Margin="0,85,0,0" Grid.Column="1"></DatePicker>
-        <DatePicker x:Name="veröffentlichung" VerticalAlignment="Center" HorizontalAlignment="Left" Width="180" Margin="0,175,0,0" Grid.Column="1"></DatePicker>
+        <DatePicker x:Name="veröffentlichung" VerticalAlignment="Center" HorizontalAlignment="Left" Width="180" Margin="0,175,0,0" Grid.Column="1" DisplayDateStart="2000-01-01"/>
         <ComboBox x:Name="DDZustand" Grid.Column="1" Width="180" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,260,0,0">
             <ComboBoxItem x:Name="intakt" IsSelected="True" Content="Intakt"></ComboBoxItem>
             <ComboBoxItem x:Name="defekt" Content="Defekt"></ComboBoxItem>
