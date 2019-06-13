@@ -21,10 +21,11 @@ namespace M120Projekt
     public partial class EditWindow : Window
     {
         private int id;
+        private CD cd;
         public EditWindow(int id)
         {
             this.id = id;
-            CD cd = CD.LesenID(id);
+            cd = CD.LesenID(id);
             InitializeComponent();
             this.usName.textBox.Text = cd.CDName;
             editWindowComboBoxAdI.Text = cd.ArtDesInhalts;
@@ -45,17 +46,22 @@ namespace M120Projekt
 
         private void Speichern_Click(object sender, RoutedEventArgs e)
         {
-            Data.CD klasseD1 = new Data.CD();
+            cd.CDName = this.usName.textBox.Text;
+            cd.ArtDesInhalts = editWindowComboBoxAdI.Text;
+            cd.StueckFilm = txtBoxstueckFilm.Text;
+            cd.KuenstlerProduzent = txtBoxKuenstlerProduzent.Text;
+            cd.Dauer = new TimeSpan(short.Parse(txtBoxDauerStunden.Text), short.Parse(txtBoxDauerMin.Text), short.Parse(txtBoxDauerSec.Text));
+            cd.Erstellung = erstellung.SelectedDate.Value;
+            cd.Veroeffentlichung = veröffentlichung.SelectedDate;
+            cd.IstIntakt = editWindowComboBoxZustand.Text;
+            cd.Aktualisieren();
+            Close();
+        }
 
-            klasseD1.CDName = this.usName.textBox.Text;
-            klasseD1.ArtDesInhalts = editWindowComboBoxAdI.Text;
-            klasseD1.StueckFilm = txtBoxstueckFilm.Text;
-            klasseD1.KuenstlerProduzent = txtBoxKuenstlerProduzent.Text;
-            klasseD1.Dauer = new TimeSpan(short.Parse(txtBoxDauerStunden.Text), short.Parse(txtBoxDauerMin.Text), short.Parse(txtBoxDauerSec.Text));
-            klasseD1.Erstellung = erstellung.SelectedDate.Value;
-            klasseD1.Veroeffentlichung = veröffentlichung.SelectedDate;
-            klasseD1.IstIntakt = editWindowComboBoxZustand.Text;
-            klasseD1.Aktualisieren();
+        private void btnLoeschen_Click(object sender, RoutedEventArgs e)
+        {
+            CD.LesenID(id).Loeschen();
+            Close();
         }
     }
 }

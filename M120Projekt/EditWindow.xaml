@@ -13,7 +13,7 @@
         </Grid.ColumnDefinitions>
         <Button x:Name="abbrechen" Content="Abbrechen" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20,0,0,10" Grid.Column="0" Click="btnAbbrechen_Click"></Button>
         <Button x:Name="speichern" Content="Speichern" FontSize="15" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,40,10" Grid.Column="1" Click="Speichern_Click"></Button>
-        <Button x:Name="loeschen" Content="Löschen" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="193,0,0,10" Grid.Column="0" Grid.ColumnSpan="2"></Button>
+        <Button x:Name="loeschen" Content="Löschen" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="193,0,0,10" Grid.Column="0" Grid.ColumnSpan="2" Click="btnLoeschen_Click"></Button>
         <Label x:Name="cdName" Content="CD Name:" FontSize="15" HorizontalAlignment="Left" Margin="20,10,0,40" Grid.Column="0"></Label>
         <Line X1="0" Y1="60" X2="212" Y2="60" Stroke="Black" StrokeThickness="1" Margin="25,0,0,0" Grid.Column="0"></Line>
         <Line X1="0" Y1="60" X2="212" Y2="60" Stroke="Black" StrokeThickness="1" Margin="0,0,40,0" Grid.Column="1"></Line>

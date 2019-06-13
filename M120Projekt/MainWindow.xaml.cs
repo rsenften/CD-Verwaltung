@@ -32,7 +32,7 @@ namespace M120Projekt
             InitializeComponent();
             // Wichtig!
             Data.Global.context = new Data.Context();
-            mainWindowDataGrid.ItemsSource = Data.CD.LesenAlle().ToList();
+            refresh();
             // Aufruf diverse APIDemo Methoden
             //APIDemo.DemoACreate();
             //APIDemo.DemoACreateKurz();
@@ -55,7 +55,7 @@ namespace M120Projekt
             int id = (int)((CD)mainWindowDataGrid.SelectedItem).CDId;
             EditWindow window = new EditWindow(id);
             window.ShowDialog();
-
+            refresh();
         }
     }
 }

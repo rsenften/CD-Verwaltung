@@ -52,6 +52,14 @@ namespace M120Projekt
         {
             Regex regex = new Regex(@"\D");
             e.Handled = regex.IsMatch(e.Text);
+            if (regex.IsMatch(txtBoxDauerSec.Text))
+            {
+                Console.WriteLine("Korrekt");
+            }
+            else
+            {
+                Console.WriteLine("Invalid");
+            }
         }
 
         private void txtSec_Input(object sender, TextCompositionEventArgs e)
