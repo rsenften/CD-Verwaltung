@@ -26,6 +26,8 @@
         <Label x:Name="erstellungsdatum" Content="Erstellungsdatum:" FontSize="15" HorizontalAlignment="Left" Margin="20,310,0,40" Grid.Column="0"></Label>
         <Label x:Name="veröffentlichungsdatum" Content="Veröffentlichungsdatum*:" FontSize="15" HorizontalAlignment="Left" Margin="20,355,0,40" Grid.Column="0"></Label>
         <Label x:Name="zustand" Content="Zustand*:" FontSize="15" HorizontalAlignment="Left" Margin="20,400,0,40" Grid.Column="0"></Label>
+        <Label x:Name="Text1" Content="Alle Felder, die mit * markiert" FontSize="12" HorizontalAlignment="Left" Margin="20,470,0,40" Grid.Column="0"></Label>
+        <Label x:Name="Text2" Content="wurden sind keine Pflichtfelder" FontSize="12" HorizontalAlignment="Left" Margin="20,490,0,40" Grid.Column="0"></Label>
         <ComboBox x:Name="DDArtDInhalt" Grid.Column="1" Width="180" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,135,0,0">
             <ComboBoxItem x:Name="lied" IsSelected="True" Content="Lied"></ComboBoxItem>
             <ComboBoxItem x:Name="film" Content="Film"></ComboBoxItem>

@@ -13,16 +13,8 @@
             <ColumnDefinition Width="33*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Label x:Name="meinCDs" Content="Meine CDs:" FontSize="24" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Column="0"></Label>
-        <Label x:Name="sortierenNach" Content="Sortieren nach:" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-100,10,0,0" Grid.Column="2"></Label>
-
-        <ComboBox Grid.Column="2" Width="130" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="30,15,10,0">
-            <ComboBoxItem x:Name="nichtSort" IsSelected="True" Content="Nicht Sortieren"></ComboBoxItem>
-            <ComboBoxItem x:Name="sortName" Content="Name"></ComboBoxItem>
-            <ComboBoxItem x:Name="sortInhalt" Content="Art Des Inhalts"></ComboBoxItem>
-            <ComboBoxItem x:Name="sortDatum" Content="Erstellt am"></ComboBoxItem>
-        </ComboBox>
-        <Label x:Name="filternNach" Content="Filtern nach:" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-100,50,0,0" Grid.Column="2"></Label>
-        <TextBox x:Name="txtFilter" BorderThickness="1" FontSize="15" Width="130" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,55,10,0" Grid.Column="2"></TextBox>
+        <Label x:Name="filternNach" Content="Filtern nach:" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="84,17,0,0" Grid.Column="1"></Label>
+        <TextBox x:Name="txtFilter" BorderThickness="1" FontSize="15" Width="130" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,22,10,0" Grid.Column="2"></TextBox>
         <!--Label x:Name="name" Content="Name:" FontWeight="Bold" FontSize="15" HorizontalAlignment="Left" Margin="10,110,0,0" Grid.Column="0"></>
         <Label x:Name="artDesInhalts" Content="Art des Inhalts:" FontWeight="Bold" FontSize="15" HorizontalAlignment="Center" Margin="0,110,0,0" Grid.Column="1"></Label>
         <Label x:Name="erstelltAm" Content="Erstellt am:" FontWeight="Bold" FontSize="15" HorizontalAlignment="Right" Margin="10,110,10,0" Grid.Column="2"></Label>
@@ -43,20 +35,13 @@
             </DockPanel>
         </Button>
 
-        <Button x:Name="bearbeiten" FontSize="15" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10" Grid.Column="1" Click="btnBearbeiten_Click">
-            <DockPanel LastChildFill="True">
-                <Image DockPanel.Dock="Left" Source="Images/Edit.png" Height="27" Width="36" ></Image>
-                <TextBlock HorizontalAlignment="Right">Bearbeiten</TextBlock>
-            </DockPanel>
-        </Button>
-
         <Button x:Name="erstellen" FontSize="15" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,10" Grid.Column="2" Click="btnErstellen_Click">
             <DockPanel LastChildFill="True">
                 <Image DockPanel.Dock="Left" Source="Images/Create.png" Height="27" Width="36" ></Image>
                 <TextBlock HorizontalAlignment="Right">Erstellen</TextBlock>
             </DockPanel>
         </Button>
-        <DataGrid x:Name="mainWindowDataGrid" ItemsSource="{Binding CD}" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="202" Margin="10,175,0,0" VerticalAlignment="Top" Width="530" Grid.ColumnSpan="3">
+        <DataGrid x:Name="mainWindowDataGrid" MouseDoubleClick="OpenView" CanUserAddRows="False" ItemsSource="{Binding CD}" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="202" Margin="10,175,0,0" VerticalAlignment="Top" Width="530" Grid.ColumnSpan="3">
             <DataGrid.Columns>
                 <DataGridTextColumn IsReadOnly="True" Binding="{Binding CDName}" Header="Name:" Width="180"></DataGridTextColumn>
                 <DataGridTextColumn IsReadOnly="True" Binding="{Binding ArtDesInhalts}" Header="Art des Inhalts:" Width="180"></DataGridTextColumn>

@@ -52,13 +52,6 @@ namespace M120Projekt
         {
             Regex regex = new Regex(@"\D");
             e.Handled = regex.IsMatch(e.Text);
-            if (regex.IsMatch(txtBoxDauerMin.Text))
-            {
-                Console.WriteLine("Korrekt");
-            } else
-            {
-                Console.WriteLine("Invalid");
-            }
         }
 
         private void txtSec_Input(object sender, TextCompositionEventArgs e)
@@ -94,6 +87,8 @@ namespace M120Projekt
             klasseD1.IstIntakt = DDZustand.Text;
             
             Int64 klasseD1Id = klasseD1.Erstellen();
+
+            Close();
         }
     }
 }

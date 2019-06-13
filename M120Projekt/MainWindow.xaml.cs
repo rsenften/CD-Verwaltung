@@ -1,4 +1,5 @@
-﻿using System;
+﻿using M120Projekt.Data;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -21,12 +22,17 @@ namespace M120Projekt
     /// </summary>
     public partial class MainWindow : UserControl
     {
+
+        public void refresh()
+        {
+            mainWindowDataGrid.ItemsSource = Data.CD.LesenAlle().ToList();
+        }
         public MainWindow()
         {
             InitializeComponent();
             // Wichtig!
             Data.Global.context = new Data.Context();
-            mainWindowDataGrid.ItemsSource = Data.CD.LesenAlle().Select(c => new { c.CDName, c.ArtDesInhalts, c.Erstellung });
+            mainWindowDataGrid.ItemsSource = Data.CD.LesenAlle().ToList();
             // Aufruf diverse APIDemo Methoden
             //APIDemo.DemoACreate();
             //APIDemo.DemoACreateKurz();
@@ -36,22 +42,20 @@ namespace M120Projekt
             //APIDemo.DemoADelete();
         }
 
-        /*
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            
-        }*/
-
         private void btnErstellen_Click(object sender, RoutedEventArgs e)
         {
             CreateWindow objCreateWindow = new CreateWindow();
             objCreateWindow.ShowDialog();
+
+            refresh();
         }
 
-        private void btnBearbeiten_Click(object sender, RoutedEventArgs e)
+        private void OpenView(object sender, MouseButtonEventArgs e)
         {
-            EditWindow objEditWindow = new EditWindow();
-            objEditWindow.ShowDialog();
+            int id = (int)((CD)mainWindowDataGrid.SelectedItem).CDId;
+            EditWindow window = new EditWindow(id);
+            window.ShowDialog();
+
         }
     }
 }
