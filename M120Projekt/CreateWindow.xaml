@@ -19,7 +19,7 @@
         <Label x:Name="inhalt" FontSize="17"  HorizontalAlignment="Left" Margin="20,70,0,40" Grid.Column="0">
             <TextBlock TextDecorations="Underline">Inhalt</TextBlock>
         </Label>
-        <Label x:Name="artDesInhalts" Content="Art des Inhalt:" FontSize="15" HorizontalAlignment="Left" Margin="20,130,0,40" Grid.Column="0"></Label>
+        <Label x:Name="artDesInhalts" Content="Art des Inhalts:" FontSize="15" HorizontalAlignment="Left" Margin="20,130,0,40" Grid.Column="0"></Label>
         <Label x:Name="stueckFilm" Content="Stück / Film:" FontSize="15" HorizontalAlignment="Left" Margin="20,175,0,40" Grid.Column="0"></Label>
         <Label x:Name="kuenstlerProduzent" Content="Künstler / Produzent:" FontSize="15" HorizontalAlignment="Left" Margin="20,220,0,40" Grid.Column="0"></Label>
         <Label x:Name="dauer" Content="Dauer:" FontSize="15" HorizontalAlignment="Left" Margin="20,265,0,40" Grid.Column="0"></Label>
@@ -27,7 +27,7 @@
         <Label x:Name="veröffentlichungsdatum" Content="Veröffentlichungsdatum*:" FontSize="15" HorizontalAlignment="Left" Margin="20,355,0,40" Grid.Column="0"></Label>
         <Label x:Name="zustand" Content="Zustand*:" FontSize="15" HorizontalAlignment="Left" Margin="20,400,0,40" Grid.Column="0"></Label>
         <Label x:Name="Text1" Content="Alle Felder, die mit * markiert" FontSize="12" HorizontalAlignment="Left" Margin="20,470,0,40" Grid.Column="0"></Label>
-        <Label x:Name="Text2" Content="wurden sind keine Pflichtfelder" FontSize="12" HorizontalAlignment="Left" Margin="20,490,0,40" Grid.Column="0"></Label>
+        <Label x:Name="Text2" Content="wurden sind optionale Felder" FontSize="12" HorizontalAlignment="Left" Margin="20,490,0,40" Grid.Column="0"></Label>
         <ComboBox x:Name="DDArtDInhalt" Grid.Column="1" Width="180" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,135,0,0">
             <ComboBoxItem x:Name="lied" IsSelected="True" Content="Lied"></ComboBoxItem>
             <ComboBoxItem x:Name="film" Content="Film"></ComboBoxItem>
@@ -48,5 +48,7 @@
             <ComboBoxItem x:Name="defekt" Content="Defekt"></ComboBoxItem>
         </ComboBox>
         <local:RegexCDName x:Name="usName" Grid.Column="1" FontSize="11" HorizontalAlignment="Left" Height="44" Margin="0,10,0,0" VerticalAlignment="Top" Width="180" RenderTransformOrigin="0.449,0.625"/>
+        <Label x:Name="lblMeldung1" Content="" FontSize="12" HorizontalAlignment="Left" Margin="0,470,0,40" Grid.Column="1" Width="180"></Label>
+        <Label x:Name="lblMeldung2" Content="" FontSize="12" HorizontalAlignment="Left" Margin="0,490,0,30" Grid.Column="1" Width="180"></Label>
     </Grid>
 </Window>

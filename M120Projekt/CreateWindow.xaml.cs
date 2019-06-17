@@ -85,18 +85,45 @@ namespace M120Projekt
             // Save Data on Database
             Data.CD klasseD1 = new Data.CD();
 
-            klasseD1.CDName = this.usName.textBox.Text;
-            klasseD1.ArtDesInhalts = DDArtDInhalt.Text;
-            klasseD1.StueckFilm = txtBoxstueckFilm.Text;
-            klasseD1.KuenstlerProduzent = txtBoxKuenstlerProduzent.Text;
-            klasseD1.Dauer = new TimeSpan(short.Parse(txtBoxDauerStunden.Text), short.Parse(txtBoxDauerMin.Text), short.Parse(txtBoxDauerSec.Text));
-            klasseD1.Erstellung = erstellung.SelectedDate.Value;
-            klasseD1.Veroeffentlichung = veröffentlichung.SelectedDate;
-            klasseD1.IstIntakt = DDZustand.Text;
+            if (String.IsNullOrEmpty(this.usName.textBox.Text))
+            {
+                lblMeldung1.Content = "Der CD Name darf";
+                lblMeldung2.Content = "nicht leer sein.";
+            } else if (String.IsNullOrEmpty(txtBoxstueckFilm.Text))
+            {
+                lblMeldung1.Content = "Stück / Film darf";
+                lblMeldung2.Content = "nicht leer sein.";
+            } else if (String.IsNullOrEmpty(txtBoxKuenstlerProduzent.Text))
+            {
+                lblMeldung1.Content = "Künstler / Produzent darf";
+                lblMeldung2.Content = "nicht leer sein.";
+            } else if (String.IsNullOrEmpty(txtBoxDauerStunden.Text))
+            {
+                lblMeldung1.Content = "Die Dauer darf";
+                lblMeldung2.Content = "nicht leer sein.";
+            } else if (String.IsNullOrEmpty(txtBoxDauerMin.Text))
+            {
+                lblMeldung1.Content = "Die Dauer darf";
+                lblMeldung2.Content = "nicht leer sein.";
+            } else if(String.IsNullOrEmpty(txtBoxDauerSec.Text))
+            {
+                lblMeldung1.Content = "Die Dauer darf";
+                lblMeldung2.Content = "nicht leer sein.";
+            } else
+            {
+                klasseD1.CDName = this.usName.textBox.Text;
+                klasseD1.ArtDesInhalts = DDArtDInhalt.Text;
+                klasseD1.StueckFilm = txtBoxstueckFilm.Text;
+                klasseD1.KuenstlerProduzent = txtBoxKuenstlerProduzent.Text;
+                klasseD1.Dauer = new TimeSpan(short.Parse(txtBoxDauerStunden.Text), short.Parse(txtBoxDauerMin.Text), short.Parse(txtBoxDauerSec.Text));
+                klasseD1.Erstellung = erstellung.SelectedDate.Value;
+                klasseD1.Veroeffentlichung = veröffentlichung.SelectedDate;
+                klasseD1.IstIntakt = DDZustand.Text;
             
-            Int64 klasseD1Id = klasseD1.Erstellen();
+                Int64 klasseD1Id = klasseD1.Erstellen();
 
-            Close();
+                Close();
+            }
         }
     }
 }
