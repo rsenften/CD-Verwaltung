@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:M120Projekt"
         mc:Ignorable="d"
-        Title="Eintrag Erstellen" Height="600" Width="450">
+        Title="Eintrag Erstellen" Height="600" Width="450"
+        WindowStartupLocation="Manual"
+        Left="0" Top="0">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="50*"></ColumnDefinition>
