@@ -12,7 +12,7 @@ namespace M120Projekt.Data
         public Context() : base("name=M120Connectionstring")
         {
             this.Configuration.LazyLoadingEnabled = true;
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<Data.Context, M120Projekt.Migrations.Configuration>());
+            Database.SetInitializer(new System.Data.Entity.DropCreateDatabaseIfModelChanges<Data.Context>());
         }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
