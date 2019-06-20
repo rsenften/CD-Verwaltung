@@ -26,15 +26,12 @@ namespace CodedUITestProject
         public void CodedUITestMethod1()
         {
             // Wählen Sie zum Generieren von Code für den Test im Kontextmenü "Code für Coded UI-Test generieren" aus, und wählen Sie eine der Menüelemente aus.
-            //this.UIMap.TestFallErstellen();
-            this.UIMap.Test_Erstellen();
-            this.UIMap.Test_Erstellen_Assert();
-            this.UIMap.Test_Bearbeiten_Arrange_Act();
-            this.UIMap.Test_Bearbeiten_Assert();
-            //this.UIMap.Negativ_Test_Erstellen();
-            //this.UIMap.Negativ_Test_Erstellen_Assert();
-            this.UIMap.Negativ_Test_Erstellen_Arrange_Act();
-            this.UIMap.Negativ_Test_Erstellen_Assert_Neu();
+            this.UIMap.Test_Erstellen_Arrange_Act_Neu();
+            this.UIMap.Test_Erstellen_Assert_Neu();
+            this.UIMap.Test_Bearbeiten_Arrange_Act_Neu();
+            this.UIMap.Test_Bearbeiten_Assert_Neu();
+            this.UIMap.Test_Erstellen_Fail_Arrange_Act_Neu();
+            this.UIMap.Test_Erstellen_Fail_Assert();
 
 
         }

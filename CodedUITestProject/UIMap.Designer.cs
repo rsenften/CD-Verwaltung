@@ -378,6 +378,181 @@ namespace CodedUITestProject
             Assert.AreEqual(this.Negativ_Test_Erstellen_Assert_NeuExpectedValues.UIStückFilmdarfTextControlType, uIStückFilmdarfText.ControlType.ToString(), "Negativ Test Erstellen Fehler");
         }
         
+        /// <summary>
+        /// Test_Erstellen_Arrange_Act_Neu - Verwenden Sie "Test_Erstellen_Arrange_Act_NeuParams", um Parameter an diese Methode zu übergeben.
+        /// </summary>
+        public void Test_Erstellen_Arrange_Act_Neu()
+        {
+            #region Variable Declarations
+            WinEdit uINameEdit = this.UIDebugWindow.UIItemWindow.UIM120ProjektexeListItem.UINameEdit;
+            WpfButton uIErstellenButton = this.UIWPFWindow.UIItemCustom.UIErstellenButton;
+            WpfEdit uIInputTxtEdit = this.UIEintragErstellenWindow.UIUsNameCustom.UIInputTxtEdit;
+            WpfEdit uITxtBoxstueckFilmEdit = this.UIEintragErstellenWindow.UITxtBoxstueckFilmEdit;
+            WpfEdit uITxtBoxKuenstlerProduEdit = this.UIEintragErstellenWindow.UITxtBoxKuenstlerProduEdit;
+            WpfEdit uITxtBoxDauerStundenEdit = this.UIEintragErstellenWindow.UITxtBoxDauerStundenEdit;
+            WpfEdit uITxtBoxDauerMinEdit = this.UIEintragErstellenWindow.UITxtBoxDauerMinEdit;
+            WpfEdit uITxtBoxDauerSecEdit = this.UIEintragErstellenWindow.UITxtBoxDauerSecEdit;
+            WpfDatePicker uIErstellungDatePicker = this.UIEintragErstellenWindow.UIErstellungDatePicker;
+            WpfButton uISpeichernButton = this.UIEintragErstellenWindow.UISpeichernButton;
+            #endregion
+
+            // Doppelklicken "Name" Textfeld
+            Mouse.DoubleClick(uINameEdit, new Point(130, 11));
+
+            // Tastenkombination "Windows + {Up}" drücken
+            Keyboard.SendKeys(this.Test_Erstellen_Arrange_Act_NeuParams.SendKeys, ModifierKeys.Windows);
+
+            // Klicken "erstellen" Schaltfläche
+            Mouse.Click(uIErstellenButton, new Point(36, 17));
+
+            // "TestNameNeu" in "inputTxt" Textfeld eingeben
+            uIInputTxtEdit.Text = this.Test_Erstellen_Arrange_Act_NeuParams.UIInputTxtEditText;
+
+            // "ein song" in "txtBoxstueckFilm" Textfeld eingeben
+            uITxtBoxstueckFilmEdit.Text = this.Test_Erstellen_Arrange_Act_NeuParams.UITxtBoxstueckFilmEditText;
+
+            // "raffaele" in "txtBoxKuenstlerProduzent" Textfeld eingeben
+            uITxtBoxKuenstlerProduEdit.Text = this.Test_Erstellen_Arrange_Act_NeuParams.UITxtBoxKuenstlerProduEditText;
+
+            // "0" in "txtBoxDauerStunden" Textfeld eingeben
+            uITxtBoxDauerStundenEdit.Text = this.Test_Erstellen_Arrange_Act_NeuParams.UITxtBoxDauerStundenEditText;
+
+            // "1" in "txtBoxDauerMin" Textfeld eingeben
+            uITxtBoxDauerMinEdit.Text = this.Test_Erstellen_Arrange_Act_NeuParams.UITxtBoxDauerMinEditText;
+
+            // "2" in "txtBoxDauerSec" Textfeld eingeben
+            uITxtBoxDauerSecEdit.Text = this.Test_Erstellen_Arrange_Act_NeuParams.UITxtBoxDauerSecEditText;
+
+            // "20-Jun-2019" in "erstellung" Datumsauswahl auswählen
+            uIErstellungDatePicker.DateAsString = this.Test_Erstellen_Arrange_Act_NeuParams.UIErstellungDatePickerDateAsString;
+
+            // Klicken "Speichern" Schaltfläche
+            Mouse.Click(uISpeichernButton, new Point(39, 11));
+        }
+        
+        /// <summary>
+        /// Test Erstellen Fehler
+        /// </summary>
+        public void Test_Erstellen_Assert_Neu()
+        {
+            #region Variable Declarations
+            WpfText uITestNameNeuText = this.UIWPFWindow.UIItemCustom.UIMainWindowDataGridTable.UIItem16Row.UITestNameNeuCell.UITestNameNeuText;
+            WpfCell uITestNameNeuCell = this.UIWPFWindow.UIItemCustom.UIMainWindowDataGridTable.UIItem16Row.UITestNameNeuCell;
+            #endregion
+
+            // Sicherstellen, dass die Eigenschaft 'ControlType' von "TestNameNeu" Bezeichnung ist gleich 'Text'
+            Assert.AreEqual(this.Test_Erstellen_Assert_NeuExpectedValues.UITestNameNeuTextControlType, uITestNameNeuText.ControlType.ToString(), "Test Erstellen Fehler");
+
+            // Sicherstellen, dass die Eigenschaft 'Value' von "TestNameNeu" Zelle ist gleich 'TestNameNeu'
+            Assert.AreEqual(this.Test_Erstellen_Assert_NeuExpectedValues.UITestNameNeuCellValue, uITestNameNeuCell.Value, "Test Erstellen Fehler");
+        }
+        
+        /// <summary>
+        /// Test_Bearbeiten_Arrange_Act_Neu - Verwenden Sie "Test_Bearbeiten_Arrange_Act_NeuParams", um Parameter an diese Methode zu übergeben.
+        /// </summary>
+        public void Test_Bearbeiten_Arrange_Act_Neu()
+        {
+            #region Variable Declarations
+            WpfText uITestNameNeuText = this.UIWPFWindow.UIItemCustom.UIMainWindowDataGridTable.UIItem16Row.UITestNameNeuCell.UITestNameNeuText;
+            WpfEdit uIInputTxtEdit = this.UIEintragBearbeitenWindow.UIUsNameCustom.UIInputTxtEdit;
+            WpfButton uISpeichernButton = this.UIEintragBearbeitenWindow.UISpeichernButton;
+            #endregion
+
+            // Doppelklicken "TestNameNeu" Bezeichnung
+            Mouse.DoubleClick(uITestNameNeuText, new Point(81, 8));
+
+            // "TestNameNeu2" in "inputTxt" Textfeld eingeben
+            uIInputTxtEdit.Text = this.Test_Bearbeiten_Arrange_Act_NeuParams.UIInputTxtEditText;
+
+            // Klicken "Speichern" Schaltfläche
+            Mouse.Click(uISpeichernButton, new Point(16, 10));
+        }
+        
+        /// <summary>
+        /// Test Bearbeiten Fehler
+        /// </summary>
+        public void Test_Bearbeiten_Assert_Neu()
+        {
+            #region Variable Declarations
+            WpfText uITestNameNeu2Text = this.UIWPFWindow.UIItemCustom.UIMainWindowDataGridTable.UIItem16Row.UITestNameNeuCell.UITestNameNeu2Text;
+            #endregion
+
+            // Sicherstellen, dass die Eigenschaft 'DisplayText' von "TestNameNeu2" Bezeichnung ist gleich 'TestNameNeu2'
+            Assert.AreEqual(this.Test_Bearbeiten_Assert_NeuExpectedValues.UITestNameNeu2TextDisplayText, uITestNameNeu2Text.DisplayText, "Test Bearbeiten Fehler");
+        }
+        
+        /// <summary>
+        /// Test_Erstellen_Fail_Arrange_Act_Neu - Verwenden Sie "Test_Erstellen_Fail_Arrange_Act_NeuParams", um Parameter an diese Methode zu übergeben.
+        /// </summary>
+        public void Test_Erstellen_Fail_Arrange_Act_Neu()
+        {
+            #region Variable Declarations
+            WpfButton uIErstellenButton = this.UIWPFWindow.UIItemCustom.UIErstellenButton;
+            WpfCustom uIUsNameCustom = this.UIEintragErstellenWindow.UIUsNameCustom;
+            WinWindow uIEintragErstellenWindow1 = this.UIEintragErstellenWindow1;
+            WinButton uISchließenButton = this.UIEintragErstellenWindow1.UISchließenButton;
+            WpfEdit uIInputTxtEdit = this.UIEintragErstellenWindow.UIUsNameCustom.UIInputTxtEdit;
+            WpfEdit uITxtBoxKuenstlerProduEdit = this.UIEintragErstellenWindow.UITxtBoxKuenstlerProduEdit;
+            WpfEdit uITxtBoxDauerStundenEdit = this.UIEintragErstellenWindow.UITxtBoxDauerStundenEdit;
+            WpfEdit uITxtBoxDauerMinEdit = this.UIEintragErstellenWindow.UITxtBoxDauerMinEdit;
+            WpfEdit uITxtBoxDauerSecEdit = this.UIEintragErstellenWindow.UITxtBoxDauerSecEdit;
+            WpfDatePicker uIErstellungDatePicker = this.UIEintragErstellenWindow.UIErstellungDatePicker;
+            WpfButton uISpeichernButton = this.UIEintragErstellenWindow.UISpeichernButton;
+            #endregion
+
+            // Klicken "erstellen" Schaltfläche
+            Mouse.Click(uIErstellenButton, new Point(44, 15));
+
+            // Klicken "usName" Benutzerdefiniertes Steuerelement
+            Mouse.Click(uIUsNameCustom, new Point(58, 0));
+
+            // Klicken "usName" Benutzerdefiniertes Steuerelement
+            Mouse.Click(uIUsNameCustom, new Point(57, 14));
+
+            // "Te" in "Eintrag Erstellen" Fenster eingeben
+            Keyboard.SendKeys(uIEintragErstellenWindow1, this.Test_Erstellen_Fail_Arrange_Act_NeuParams.UIEintragErstellenWindow1SendKeys, ModifierKeys.None);
+
+            // Klicken "Schließen" Schaltfläche
+            Mouse.Click(uISchließenButton, new Point(31, 19));
+
+            // Klicken "erstellen" Schaltfläche
+            Mouse.Click(uIErstellenButton, new Point(22, 18));
+
+            // "TestFail" in "inputTxt" Textfeld eingeben
+            uIInputTxtEdit.Text = this.Test_Erstellen_Fail_Arrange_Act_NeuParams.UIInputTxtEditText;
+
+            // "fail" in "txtBoxKuenstlerProduzent" Textfeld eingeben
+            uITxtBoxKuenstlerProduEdit.Text = this.Test_Erstellen_Fail_Arrange_Act_NeuParams.UITxtBoxKuenstlerProduEditText;
+
+            // "1" in "txtBoxDauerStunden" Textfeld eingeben
+            uITxtBoxDauerStundenEdit.Text = this.Test_Erstellen_Fail_Arrange_Act_NeuParams.UITxtBoxDauerStundenEditText;
+
+            // "2" in "txtBoxDauerMin" Textfeld eingeben
+            uITxtBoxDauerMinEdit.Text = this.Test_Erstellen_Fail_Arrange_Act_NeuParams.UITxtBoxDauerMinEditText;
+
+            // "3" in "txtBoxDauerSec" Textfeld eingeben
+            uITxtBoxDauerSecEdit.Text = this.Test_Erstellen_Fail_Arrange_Act_NeuParams.UITxtBoxDauerSecEditText;
+
+            // "20-Jun-2019" in "erstellung" Datumsauswahl auswählen
+            uIErstellungDatePicker.DateAsString = this.Test_Erstellen_Fail_Arrange_Act_NeuParams.UIErstellungDatePickerDateAsString;
+
+            // Klicken "Speichern" Schaltfläche
+            Mouse.Click(uISpeichernButton, new Point(29, 7));
+        }
+        
+        /// <summary>
+        /// Test Erstellen Fail Fehler
+        /// </summary>
+        public void Test_Erstellen_Fail_Assert()
+        {
+            #region Variable Declarations
+            WpfText uIStückFilmdarfText1 = this.UIEintragErstellenWindow.UIStückFilmdarfText.UIStückFilmdarfText1;
+            #endregion
+
+            // Sicherstellen, dass die Eigenschaft 'DisplayText' von "Stück / Film darf" Bezeichnung ist gleich 'Stück / Film darf'
+            Assert.AreEqual(this.Test_Erstellen_Fail_AssertExpectedValues.UIStückFilmdarfText1DisplayText, uIStückFilmdarfText1.DisplayText, "Test Fail Fehler");
+        }
+        
         #region Properties
         public virtual TestFallErstellenParams TestFallErstellenParams
         {
@@ -487,6 +662,78 @@ namespace CodedUITestProject
             }
         }
         
+        public virtual Test_Erstellen_Arrange_Act_NeuParams Test_Erstellen_Arrange_Act_NeuParams
+        {
+            get
+            {
+                if ((this.mTest_Erstellen_Arrange_Act_NeuParams == null))
+                {
+                    this.mTest_Erstellen_Arrange_Act_NeuParams = new Test_Erstellen_Arrange_Act_NeuParams();
+                }
+                return this.mTest_Erstellen_Arrange_Act_NeuParams;
+            }
+        }
+        
+        public virtual Test_Erstellen_Assert_NeuExpectedValues Test_Erstellen_Assert_NeuExpectedValues
+        {
+            get
+            {
+                if ((this.mTest_Erstellen_Assert_NeuExpectedValues == null))
+                {
+                    this.mTest_Erstellen_Assert_NeuExpectedValues = new Test_Erstellen_Assert_NeuExpectedValues();
+                }
+                return this.mTest_Erstellen_Assert_NeuExpectedValues;
+            }
+        }
+        
+        public virtual Test_Bearbeiten_Arrange_Act_NeuParams Test_Bearbeiten_Arrange_Act_NeuParams
+        {
+            get
+            {
+                if ((this.mTest_Bearbeiten_Arrange_Act_NeuParams == null))
+                {
+                    this.mTest_Bearbeiten_Arrange_Act_NeuParams = new Test_Bearbeiten_Arrange_Act_NeuParams();
+                }
+                return this.mTest_Bearbeiten_Arrange_Act_NeuParams;
+            }
+        }
+        
+        public virtual Test_Bearbeiten_Assert_NeuExpectedValues Test_Bearbeiten_Assert_NeuExpectedValues
+        {
+            get
+            {
+                if ((this.mTest_Bearbeiten_Assert_NeuExpectedValues == null))
+                {
+                    this.mTest_Bearbeiten_Assert_NeuExpectedValues = new Test_Bearbeiten_Assert_NeuExpectedValues();
+                }
+                return this.mTest_Bearbeiten_Assert_NeuExpectedValues;
+            }
+        }
+        
+        public virtual Test_Erstellen_Fail_Arrange_Act_NeuParams Test_Erstellen_Fail_Arrange_Act_NeuParams
+        {
+            get
+            {
+                if ((this.mTest_Erstellen_Fail_Arrange_Act_NeuParams == null))
+                {
+                    this.mTest_Erstellen_Fail_Arrange_Act_NeuParams = new Test_Erstellen_Fail_Arrange_Act_NeuParams();
+                }
+                return this.mTest_Erstellen_Fail_Arrange_Act_NeuParams;
+            }
+        }
+        
+        public virtual Test_Erstellen_Fail_AssertExpectedValues Test_Erstellen_Fail_AssertExpectedValues
+        {
+            get
+            {
+                if ((this.mTest_Erstellen_Fail_AssertExpectedValues == null))
+                {
+                    this.mTest_Erstellen_Fail_AssertExpectedValues = new Test_Erstellen_Fail_AssertExpectedValues();
+                }
+                return this.mTest_Erstellen_Fail_AssertExpectedValues;
+            }
+        }
+        
         public UIWPFWindow UIWPFWindow
         {
             get
@@ -534,6 +781,18 @@ namespace CodedUITestProject
                 return this.mUIEintragBearbeitenWindow;
             }
         }
+        
+        public UIEintragErstellenWindow1 UIEintragErstellenWindow1
+        {
+            get
+            {
+                if ((this.mUIEintragErstellenWindow1 == null))
+                {
+                    this.mUIEintragErstellenWindow1 = new UIEintragErstellenWindow1();
+                }
+                return this.mUIEintragErstellenWindow1;
+            }
+        }
         #endregion
         
         #region Fields
@@ -555,6 +814,18 @@ namespace CodedUITestProject
         
         private Negativ_Test_Erstellen_Assert_NeuExpectedValues mNegativ_Test_Erstellen_Assert_NeuExpectedValues;
         
+        private Test_Erstellen_Arrange_Act_NeuParams mTest_Erstellen_Arrange_Act_NeuParams;
+        
+        private Test_Erstellen_Assert_NeuExpectedValues mTest_Erstellen_Assert_NeuExpectedValues;
+        
+        private Test_Bearbeiten_Arrange_Act_NeuParams mTest_Bearbeiten_Arrange_Act_NeuParams;
+        
+        private Test_Bearbeiten_Assert_NeuExpectedValues mTest_Bearbeiten_Assert_NeuExpectedValues;
+        
+        private Test_Erstellen_Fail_Arrange_Act_NeuParams mTest_Erstellen_Fail_Arrange_Act_NeuParams;
+        
+        private Test_Erstellen_Fail_AssertExpectedValues mTest_Erstellen_Fail_AssertExpectedValues;
+        
         private UIWPFWindow mUIWPFWindow;
         
         private UIEintragErstellenWindow mUIEintragErstellenWindow;
@@ -562,6 +833,8 @@ namespace CodedUITestProject
         private UIDebugWindow mUIDebugWindow;
         
         private UIEintragBearbeitenWindow mUIEintragBearbeitenWindow;
+        
+        private UIEintragErstellenWindow1 mUIEintragErstellenWindow1;
         #endregion
     }
     
@@ -850,6 +1123,166 @@ namespace CodedUITestProject
         #endregion
     }
     
+    /// <summary>
+    /// An "Test_Erstellen_Arrange_Act_Neu" zu übergebende Parameter
+    /// </summary>
+    [GeneratedCode("Coded UI-Test-Generator", "15.0.26208.0")]
+    public class Test_Erstellen_Arrange_Act_NeuParams
+    {
+        
+        #region Fields
+        /// <summary>
+        /// Tastenkombination "Windows + {Up}" drücken
+        /// </summary>
+        public string SendKeys = "{Up}";
+        
+        /// <summary>
+        /// "TestNameNeu" in "inputTxt" Textfeld eingeben
+        /// </summary>
+        public string UIInputTxtEditText = "TestNameNeu";
+        
+        /// <summary>
+        /// "ein song" in "txtBoxstueckFilm" Textfeld eingeben
+        /// </summary>
+        public string UITxtBoxstueckFilmEditText = "ein song";
+        
+        /// <summary>
+        /// "raffaele" in "txtBoxKuenstlerProduzent" Textfeld eingeben
+        /// </summary>
+        public string UITxtBoxKuenstlerProduEditText = "raffaele";
+        
+        /// <summary>
+        /// "0" in "txtBoxDauerStunden" Textfeld eingeben
+        /// </summary>
+        public string UITxtBoxDauerStundenEditText = "0";
+        
+        /// <summary>
+        /// "1" in "txtBoxDauerMin" Textfeld eingeben
+        /// </summary>
+        public string UITxtBoxDauerMinEditText = "1";
+        
+        /// <summary>
+        /// "2" in "txtBoxDauerSec" Textfeld eingeben
+        /// </summary>
+        public string UITxtBoxDauerSecEditText = "2";
+        
+        /// <summary>
+        /// "20-Jun-2019" in "erstellung" Datumsauswahl auswählen
+        /// </summary>
+        public string UIErstellungDatePickerDateAsString = "20-Jun-2019";
+        #endregion
+    }
+    
+    /// <summary>
+    /// An "Test_Erstellen_Assert_Neu" zu übergebende Parameter
+    /// </summary>
+    [GeneratedCode("Coded UI-Test-Generator", "15.0.26208.0")]
+    public class Test_Erstellen_Assert_NeuExpectedValues
+    {
+        
+        #region Fields
+        /// <summary>
+        /// Sicherstellen, dass die Eigenschaft 'ControlType' von "TestNameNeu" Bezeichnung ist gleich 'Text'
+        /// </summary>
+        public string UITestNameNeuTextControlType = "Text";
+        
+        /// <summary>
+        /// Sicherstellen, dass die Eigenschaft 'Value' von "TestNameNeu" Zelle ist gleich 'TestNameNeu'
+        /// </summary>
+        public string UITestNameNeuCellValue = "TestNameNeu";
+        #endregion
+    }
+    
+    /// <summary>
+    /// An "Test_Bearbeiten_Arrange_Act_Neu" zu übergebende Parameter
+    /// </summary>
+    [GeneratedCode("Coded UI-Test-Generator", "15.0.26208.0")]
+    public class Test_Bearbeiten_Arrange_Act_NeuParams
+    {
+        
+        #region Fields
+        /// <summary>
+        /// "TestNameNeu2" in "inputTxt" Textfeld eingeben
+        /// </summary>
+        public string UIInputTxtEditText = "TestNameNeu2";
+        #endregion
+    }
+    
+    /// <summary>
+    /// An "Test_Bearbeiten_Assert_Neu" zu übergebende Parameter
+    /// </summary>
+    [GeneratedCode("Coded UI-Test-Generator", "15.0.26208.0")]
+    public class Test_Bearbeiten_Assert_NeuExpectedValues
+    {
+        
+        #region Fields
+        /// <summary>
+        /// Sicherstellen, dass die Eigenschaft 'DisplayText' von "TestNameNeu2" Bezeichnung ist gleich 'TestNameNeu2'
+        /// </summary>
+        public string UITestNameNeu2TextDisplayText = "TestNameNeu2";
+        #endregion
+    }
+    
+    /// <summary>
+    /// An "Test_Erstellen_Fail_Arrange_Act_Neu" zu übergebende Parameter
+    /// </summary>
+    [GeneratedCode("Coded UI-Test-Generator", "15.0.26208.0")]
+    public class Test_Erstellen_Fail_Arrange_Act_NeuParams
+    {
+        
+        #region Fields
+        /// <summary>
+        /// "Te" in "Eintrag Erstellen" Fenster eingeben
+        /// </summary>
+        public string UIEintragErstellenWindow1SendKeys = "Te";
+        
+        /// <summary>
+        /// "TestFail" in "inputTxt" Textfeld eingeben
+        /// </summary>
+        public string UIInputTxtEditText = "TestFail";
+        
+        /// <summary>
+        /// "fail" in "txtBoxKuenstlerProduzent" Textfeld eingeben
+        /// </summary>
+        public string UITxtBoxKuenstlerProduEditText = "fail";
+        
+        /// <summary>
+        /// "1" in "txtBoxDauerStunden" Textfeld eingeben
+        /// </summary>
+        public string UITxtBoxDauerStundenEditText = "1";
+        
+        /// <summary>
+        /// "2" in "txtBoxDauerMin" Textfeld eingeben
+        /// </summary>
+        public string UITxtBoxDauerMinEditText = "2";
+        
+        /// <summary>
+        /// "3" in "txtBoxDauerSec" Textfeld eingeben
+        /// </summary>
+        public string UITxtBoxDauerSecEditText = "3";
+        
+        /// <summary>
+        /// "20-Jun-2019" in "erstellung" Datumsauswahl auswählen
+        /// </summary>
+        public string UIErstellungDatePickerDateAsString = "20-Jun-2019";
+        #endregion
+    }
+    
+    /// <summary>
+    /// An "Test_Erstellen_Fail_Assert" zu übergebende Parameter
+    /// </summary>
+    [GeneratedCode("Coded UI-Test-Generator", "15.0.26208.0")]
+    public class Test_Erstellen_Fail_AssertExpectedValues
+    {
+        
+        #region Fields
+        /// <summary>
+        /// Sicherstellen, dass die Eigenschaft 'DisplayText' von "Stück / Film darf" Bezeichnung ist gleich 'Stück / Film darf'
+        /// </summary>
+        public string UIStückFilmdarfText1DisplayText = "Stück / Film darf";
+        #endregion
+    }
+    
     [GeneratedCode("Coded UI-Test-Generator", "15.0.26208.0")]
     public class UIWPFWindow : WpfWindow
     {
@@ -952,10 +1385,24 @@ namespace CodedUITestProject
                 return this.mUIItem15Row;
             }
         }
+        
+        public UIItem16Row UIItem16Row
+        {
+            get
+            {
+                if ((this.mUIItem16Row == null))
+                {
+                    this.mUIItem16Row = new UIItem16Row(this);
+                }
+                return this.mUIItem16Row;
+            }
+        }
         #endregion
         
         #region Fields
         private UIItem15Row mUIItem15Row;
+        
+        private UIItem16Row mUIItem16Row;
         #endregion
     }
     
@@ -1087,6 +1534,89 @@ namespace CodedUITestProject
         
         #region Fields
         private WpfText mUILiedText;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "15.0.26208.0")]
+    public class UIItem16Row : WpfRow
+    {
+        
+        public UIItem16Row(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WpfRow.PropertyNames.Name] = "16";
+            this.SearchConfigurations.Add(SearchConfiguration.AlwaysSearch);
+            #endregion
+        }
+        
+        #region Properties
+        public UITestNameNeuCell UITestNameNeuCell
+        {
+            get
+            {
+                if ((this.mUITestNameNeuCell == null))
+                {
+                    this.mUITestNameNeuCell = new UITestNameNeuCell(this);
+                }
+                return this.mUITestNameNeuCell;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UITestNameNeuCell mUITestNameNeuCell;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "15.0.26208.0")]
+    public class UITestNameNeuCell : WpfCell
+    {
+        
+        public UITestNameNeuCell(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WpfCell.PropertyNames.ColumnHeader] = "Name:";
+            #endregion
+        }
+        
+        #region Properties
+        public WpfText UITestNameNeuText
+        {
+            get
+            {
+                if ((this.mUITestNameNeuText == null))
+                {
+                    this.mUITestNameNeuText = new WpfText(this);
+                    #region Suchkriterien
+                    this.mUITestNameNeuText.SearchProperties[WpfText.PropertyNames.Name] = "TestNameNeu";
+                    #endregion
+                }
+                return this.mUITestNameNeuText;
+            }
+        }
+        
+        public WpfText UITestNameNeu2Text
+        {
+            get
+            {
+                if ((this.mUITestNameNeu2Text == null))
+                {
+                    this.mUITestNameNeu2Text = new WpfText(this);
+                    #region Suchkriterien
+                    this.mUITestNameNeu2Text.SearchProperties[WpfText.PropertyNames.Name] = "TestNameNeu2";
+                    #endregion
+                }
+                return this.mUITestNameNeu2Text;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfText mUITestNameNeuText;
+        
+        private WpfText mUITestNameNeu2Text;
         #endregion
     }
     
@@ -1228,17 +1758,13 @@ namespace CodedUITestProject
             }
         }
         
-        public WpfText UIStückFilmdarfText
+        public UIStückFilmdarfText UIStückFilmdarfText
         {
             get
             {
                 if ((this.mUIStückFilmdarfText == null))
                 {
-                    this.mUIStückFilmdarfText = new WpfText(this);
-                    #region Suchkriterien
-                    this.mUIStückFilmdarfText.SearchProperties[WpfText.PropertyNames.AutomationId] = "lblMeldung1";
-                    this.mUIStückFilmdarfText.WindowTitles.Add("Eintrag Erstellen");
-                    #endregion
+                    this.mUIStückFilmdarfText = new UIStückFilmdarfText(this);
                 }
                 return this.mUIStückFilmdarfText;
             }
@@ -1262,7 +1788,7 @@ namespace CodedUITestProject
         
         private WpfButton mUISpeichernButton;
         
-        private WpfText mUIStückFilmdarfText;
+        private UIStückFilmdarfText mUIStückFilmdarfText;
         #endregion
     }
     
@@ -1300,6 +1826,43 @@ namespace CodedUITestProject
         
         #region Fields
         private WpfEdit mUIInputTxtEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "15.0.26208.0")]
+    public class UIStückFilmdarfText : WpfText
+    {
+        
+        public UIStückFilmdarfText(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Suchkriterien
+            this.SearchProperties[WpfText.PropertyNames.AutomationId] = "lblMeldung1";
+            this.WindowTitles.Add("Eintrag Erstellen");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfText UIStückFilmdarfText1
+        {
+            get
+            {
+                if ((this.mUIStückFilmdarfText1 == null))
+                {
+                    this.mUIStückFilmdarfText1 = new WpfText(this);
+                    #region Suchkriterien
+                    this.mUIStückFilmdarfText1.SearchProperties[WpfText.PropertyNames.Name] = "Stück / Film darf";
+                    this.mUIStückFilmdarfText1.SearchConfigurations.Add(SearchConfiguration.DisambiguateChild);
+                    this.mUIStückFilmdarfText1.WindowTitles.Add("Eintrag Erstellen");
+                    #endregion
+                }
+                return this.mUIStückFilmdarfText1;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfText mUIStückFilmdarfText1;
         #endregion
     }
     
@@ -1488,6 +2051,42 @@ namespace CodedUITestProject
         
         #region Fields
         private WpfEdit mUIInputTxtEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UI-Test-Generator", "15.0.26208.0")]
+    public class UIEintragErstellenWindow1 : WinWindow
+    {
+        
+        public UIEintragErstellenWindow1()
+        {
+            #region Suchkriterien
+            this.SearchProperties[WinWindow.PropertyNames.Name] = "Eintrag Erstellen";
+            this.SearchProperties.Add(new PropertyExpression(WinWindow.PropertyNames.ClassName, "HwndWrapper", PropertyExpressionOperator.Contains));
+            this.WindowTitles.Add("Eintrag Erstellen");
+            #endregion
+        }
+        
+        #region Properties
+        public WinButton UISchließenButton
+        {
+            get
+            {
+                if ((this.mUISchließenButton == null))
+                {
+                    this.mUISchließenButton = new WinButton(this);
+                    #region Suchkriterien
+                    this.mUISchließenButton.SearchProperties[WinButton.PropertyNames.Name] = "Schließen";
+                    this.mUISchließenButton.WindowTitles.Add("Eintrag Erstellen");
+                    #endregion
+                }
+                return this.mUISchließenButton;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinButton mUISchließenButton;
         #endregion
     }
 }
